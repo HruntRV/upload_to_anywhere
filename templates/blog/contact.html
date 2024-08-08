@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h3>Subscribe to our mail list</h3>
+<form class="well" role="form" name="query" action="{% url 'contacts' %}" method="POST">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <div class="form-group">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Subscribe</button>
+  </form>
+{% endblock %}
+

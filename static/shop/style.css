@@ -1,0 +1,19 @@
+.cart-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.row-block {
+    margin-top: 70px !important;
+    margin-bottom: 70px !important;
+}
+ .price-block {
+    margin-top: 20px !important;
+    margin-bottom: 30px !important;
+ }
+
+.font {
+   font-family: Arial, Helvetica, sans-serif;
+}

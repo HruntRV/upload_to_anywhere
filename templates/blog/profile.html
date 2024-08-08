@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<h1> Your Profile</h1>
+{% if profile_data.avatar %}
+<img class="profile-img" src="{{ profile_data.avatar.url }}">
+{% else %}
+<img class="profile-img" src="{% static 'img/default_avatar.png' %}" alt="Default Profile Image">
+{% endif %}
+<div>
+    <p><b>Username:</b> {{ profile_data.user.username }}</p>
+    <p><b>First name:</b> {{ profile_data.user.first_name }}</p>
+    <p><b>Last name</b> {{ profile_data.user.last_name }}</p>
+    <p><b>Gender:</b> {{ profile_data.gender }}</p>
+    <p><b>Email:</b> {{ profile_data.user.email }}</p>
+    <p><b>Phone:</b> {{ profile_data.phone }}</p>
+    <p><b>Country:</b> {{ profile_data.country }}</p>
+    <p><b>City:</b> {{ profile_data.city }}</p>
+</div>
+<br>
+<a class="btn btn-primary" href="{% url 'update_profile' %}">Update profile<span class="glyphicon glyphicon-chevron-right"></span></a>
+<div class="statistic_container">
+    <div class="statistic_img-wrapper">
+        <img class="statistic_img" src="{% static 'img/statistic.png' %}" alt="statistic_image">
+    </div>
+    <div class="statistic">
+        <div><b>Comments quantity:</b><span class="numberCircle">1</span></div>
+        <div><b>Added post:</b><span class="numberCircle">1</span></div>
+        <div><b>Days online:</b><span class="numberCircle">1</span></div>
+        <div><b>Last login:</b><span>23.07.24</span></div>
+        <div><b>Date joined:</b><span>10.02.24</span></div>
+    </div>
+</div>
+{% endblock %}
